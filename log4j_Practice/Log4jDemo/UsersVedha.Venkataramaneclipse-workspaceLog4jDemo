@@ -1,0 +1,3 @@
+2019-06-10 06:04:17 DEBUG yest:10 - this is debug
+2019-06-10 06:04:17 INFO  yest:11 - this is info
+2019-06-10 06:04:17 WARN  yest:12 - this is info
