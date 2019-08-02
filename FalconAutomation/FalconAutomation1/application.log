@@ -1,0 +1,4 @@
+2019-08-02 04:46:19,345  INFO [main] LogReports:22 - Passed : the pass tests  match the actual results: Actual data : 9 Expected :9
+2019-08-02 04:46:19,346  INFO [main] LogReports:22 - The pass test is matching the actual results
+2019-08-02 04:46:20,503  INFO [main] LogReports:22 - failed Tests are1
+2019-08-02 04:46:20,504  INFO [main] LogReports:22 - The fail test is matching the actual results
