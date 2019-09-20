@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.toolsqa.testscripts.PurchaseProducts">
+        <methods>
+          <include name="checkAvailablityOfProductsInCart"/>
+          <include name="ValidateProductSAndAddToCart"/>
+          <include name="intitailizeBrowser"/>
+          <include name="endTest"/>
+        </methods>
+      </class> <!-- com.toolsqa.testscripts.PurchaseProducts -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
