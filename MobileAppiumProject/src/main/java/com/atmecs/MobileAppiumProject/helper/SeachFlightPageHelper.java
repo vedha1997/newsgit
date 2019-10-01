@@ -1,13 +1,12 @@
 package com.atmecs.MobileAppiumProject.helper;
 
-import java.util.concurrent.TimeUnit;
+
+import java.util.List;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.Test;
 
 import com.atmecs.MobileAppiumProject.testbase.TestBase;
 
-import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -18,29 +17,70 @@ public class SeachFlightPageHelper extends TestBase {
 	}
 	public void searchCityInList(String cityCode) {
 		MobileElement clickOnSearch = 	driver.findElement(By.xpath("//input[contains(@id,'city-selector-ORIGIN')]"));
-		clickOnSearch.click();
+		//clickOnSearch.click();
 		getWait(2);
+		waitsUntilPresenceOfElement(By.xpath("//input[contains(@id,'city-selector-ORIGIN')]"), 5);
 		clickOnSearch.sendKeys(cityCode);
 	}
+	
+	
+	
+	
+	
+public void iteratingList() {
+		
+		List<MobileElement> forJfk = driver.findElements(By.xpath("//jb-booker-air//form[contains(@class,'ng-untouched ng-pristine ng-valid')]"));
+		//System.out.println(forJfk.toString());
+		
+//		for(int i=0; i<=forJfk.size();i++) {
+//			System.out.println(forJfk.get(i).toString());
+//			
+//		}
+	
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void selectTriptype() {
 		MobileElement tripType = driver.findElement(By.xpath("//label[contains(text(),' One-way')]"));
 		tripType.click();
 		System.out.println("one-way route clicled");
 	}
 	public void selctCityFrom() {
+		getWait(5);
 		MobileElement fromCity = 	driver.findElement(By.xpath("//input[contains(@placeholder,'Where from?')]"));
 		fromCity.click();
 		System.out.println("from city button clicked");
-		getWait(3);
+		getWait(6);
 		searchCityInList("JFK");
 		getWait(3);
 		System.out.println("searched jfk city");
-		getWait(5);
-		MobileElement selectCity = 	driver.findElement(By.xpath("(//span[contains(text(),'JFK')])[1]"));
+		
+		//MobileElement selectCity = 	driver.findElement(By.xpath("//jb-booker-air//form[contains(@class,'ng-untouched ng-pristine ng-valid')]"));
+		List<MobileElement> forJfk = driver.findElements(By.xpath("//jb-booker-air//form[contains(@class,'ng-untouched ng-pristine ng-valid')]"));
+		if(forJfk.size() > 0) {
+			System.out.println("size :   "   +forJfk.size());
+			//forJfk.get(3).click();
+		}
+		
+		System.out.println("the web elements present in the xpath are listed above");
+		
 		waitsUntilPresenceOfElement(By.xpath("(//span[contains(text(),'JFK')])[1]"),5);
 		getWait(3);
-		selectCity.click();
-		System.out.println("selected city jfk");
+		//selectCity.click();
+		//System.out.println("selected city jfk");
 	}
 	public void selectCityTo() {
 		MobileElement toCity = 	driver.findElement(By.xpath("//input[contains(@placeholder,'Where to?')]"));
@@ -71,6 +111,15 @@ public class SeachFlightPageHelper extends TestBase {
 		MobileElement clickOnSearchOnFlights = 	driver.findElement(By.xpath("//span[contains(text(),'Search flights')]"));
 		clickOnSearchOnFlights.click();
 		System.out.println("clicked on search flighst");
+	}
+	public void searchFlightPage() {
+		selectTriptype();
+		selctCityFrom();
+		selectCityTo();
+		selectDate();
+		clickSearchFlights();
+
+		
 	}
 
 }

@@ -7,7 +7,7 @@ import com.atmecs.MobileAppiumProject.testbase.TestBase;
 
 public class DepartingFlightPage extends TestBase {
 
-	@Test(priority =1)
+	//@Test(priority =1)
 	public void selectFlightAndDepart() {
 		DepartingFlightHelper helper = new DepartingFlightHelper(driver);
 		helper.selectFlight();
